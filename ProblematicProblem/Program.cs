@@ -118,7 +118,7 @@ namespace ProblematicProblem
                 Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
                 var userResponse = Console.ReadLine().ToLower();
-                while (userResponse == "keep" && userResponse != "redo")
+                while (userResponse != "keep" && userResponse != "redo")
                 {
                     Console.WriteLine("Invalid response");
                     userResponse = Console.ReadLine().ToLower();
@@ -127,6 +127,7 @@ namespace ProblematicProblem
                 if (userResponse == "keep")
                 {
                     Console.WriteLine($"Ok I hope you enjoy {randomActivity}. Have a great day {userName}!");
+                    return;
                 }
                 else
                 {
